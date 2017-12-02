@@ -19,7 +19,6 @@ namespace AdventOfCode_2017.Day2
             for (var i = 0; i < lines.Length; i++)
             {
                 var numbers = lines[i].Split(" ").Select(num => int.Parse(num));
-                var count = numbers.Count();
                 var pairs = numbers.SelectMany(n => numbers, (n1, n2) => Tuple.Create(n1, n2)).Where(p => p.Item1 != p.Item2);
                 var evenlyDivisble = pairs.Where(p => ((double)p.Item1 / p.Item2) % 1 == 0);
                 sum += evenlyDivisble.Sum(p => (p.Item1 / p.Item2));
