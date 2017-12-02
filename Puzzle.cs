@@ -23,7 +23,7 @@ namespace AdventOfCode_2017
 
         public abstract T Answer(string input);
 
-        public async Task<string> GetInput()
+        public async Task<string> GetInput(bool trim = true)
         {
             if (!_inputCached)
             {
@@ -52,7 +52,12 @@ namespace AdventOfCode_2017
                 data = new byte[reader.Length];
                 await reader.ReadAsync(data, 0, (int)reader.Length);
             }
-            return Encoding.ASCII.GetString(data).Trim();
+
+            var output = Encoding.ASCII.GetString(data);
+
+            return trim
+                ? output.Trim()
+                : output;
         }
     }
 }
