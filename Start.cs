@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AdventOfCode_2017.Day1;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
@@ -8,19 +9,11 @@ namespace AdventOfCode_2017
 {
     public class Start
     {
-        static async Task<string> GetPuzzleInput()
-        {
-            var puzzle = new Puzzle(1);
-            var input = await puzzle.GetInput();
-
-            return input;
-        }
-
         static void Main(string[] args)
         {
-            var x = Directory.GetCurrentDirectory();
-            var result = GetPuzzleInput().GetAwaiter().GetResult();
-            Console.WriteLine(result);
+            var puzzle = new Day1Part1();
+            var input = puzzle.GetInput().GetAwaiter().GetResult();
+            var answer = puzzle.Answer(input);
             var y = 10;
         }
     }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AdventOfCode_2017
 {
-    public class Puzzle
+    public abstract class Puzzle<T>
     {
         private readonly int _day;
         private readonly string _inputFileName;
@@ -20,6 +20,8 @@ namespace AdventOfCode_2017
             _inputFileName = $"{Directory.GetCurrentDirectory()}/Day{_day}/input.txt";
             _inputCached = File.Exists(_inputFileName);
         }
+
+        public abstract T Answer(string input);
 
         public async Task<string> GetInput()
         {
@@ -50,7 +52,6 @@ namespace AdventOfCode_2017
                 data = new byte[reader.Length];
                 await reader.ReadAsync(data, 0, (int)reader.Length);
             }
-
             return Encoding.ASCII.GetString(data);
         }
     }
