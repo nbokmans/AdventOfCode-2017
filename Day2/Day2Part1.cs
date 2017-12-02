@@ -15,7 +15,6 @@ namespace AdventOfCode_2017.Day2
         {
             input = input.Replace('\t', ' ').Trim();
             var lines = input.Split('\n');
-            var x = lines.Length;
             var sum = 0;
             for (var i = 0; i < lines.Length; i++)
             {
