@@ -14,7 +14,7 @@ namespace AdventOfCode_2017.Day1
 
         public override int Answer(string input)
         {
-            var characters = input.Trim().ToCharArray();
+            var characters = input.ToCharArray();
             var sum = 0;
             for (var i = 0; i < characters.Length; i++)
             {

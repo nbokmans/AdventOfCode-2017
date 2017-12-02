@@ -11,7 +11,7 @@ namespace AdventOfCode_2017
     {
         static void Main(string[] args)
         {
-            var puzzle = new Day1Part1();
+            var puzzle = new Day1Part2();
             var input = puzzle.GetInput().GetAwaiter().GetResult();
             var answer = puzzle.Answer(input);
             var y = 10;

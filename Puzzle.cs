@@ -52,7 +52,7 @@ namespace AdventOfCode_2017
                 data = new byte[reader.Length];
                 await reader.ReadAsync(data, 0, (int)reader.Length);
             }
-            return Encoding.ASCII.GetString(data);
+            return Encoding.ASCII.GetString(data).Trim();
         }
     }
 }
