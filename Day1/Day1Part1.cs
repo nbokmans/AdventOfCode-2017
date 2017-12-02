@@ -15,7 +15,7 @@ namespace AdventOfCode_2017.Day1
         public override int Answer(string input)
         {
             var characters = input.Trim().ToCharArray();
-            var count = 0;
+            var sum = 0;
             for (var i = 0; i < characters.Length; i++)
             {
                 var compareTo = i == characters.Length - 1
@@ -23,19 +23,11 @@ namespace AdventOfCode_2017.Day1
                     : i + 1;
                 if (characters[i] == characters[compareTo])
                 {
-                    Console.WriteLine($"Characters[{i}]={characters[i]} - Characters[{compareTo}]={characters[compareTo]}");
-                    var toAdd = characters[i] - '0';
-                    count += toAdd;
-                    Console.WriteLine(toAdd);
-                }
-
-                if (i == characters.Length - 1)
-                {
-                    var x = 10;
+                    sum += characters[i] - '0';
                 }
             }
 
-            return count;
+            return sum;
         }
     }
 }
