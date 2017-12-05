@@ -2,6 +2,7 @@
 using AdventOfCode_2017.Day2;
 using AdventOfCode_2017.Day3;
 using AdventOfCode_2017.Day4;
+using AdventOfCode_2017.Day5;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -15,7 +16,7 @@ namespace AdventOfCode_2017
     {
         static void Main(string[] args)
         {
-            var puzzle = new Day4Part2();
+            var puzzle = new Day5Part2();
             var input = puzzle.GetInput().GetAwaiter().GetResult();
             var answer = puzzle.Answer(input);
             var y = 10;
